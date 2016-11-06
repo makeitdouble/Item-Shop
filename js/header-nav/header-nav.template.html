@@ -1,0 +1,81 @@
+<script>
+    $(function() {
+        $('#main-menu').smartmenus({
+            mainMenuSubOffsetX: -1,
+            subMenusSubOffsetX: 10,
+            subMenusSubOffsetY: 0,
+            subIndicators: false
+        });
+    });
+
+</script>
+<div class="container">
+    <div class="row">
+        <div class="row header">
+            <div class="col-xs-7">
+                <a href="#"><img src="./logo.jpg" class="img-responsive" alt=""></a>
+            </div>
+            <div class="col-xs-5 text-right cart-nav">
+                <button class="cart nav-button btn-lg">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                    <span class="hidden-xs"> <b>{{$ctrl.qCart}}</b> {{$ctrl.word}} in your cart $<b>{{$ctrl.totalPrice}}</b></span>
+                </button>
+                <div class="cart-info nav-button btn-lg">
+                    <table>
+                        <tr ng-repeat="item in $ctrl.localItems">
+                            <td><img ng-src="{{item.imageUrl}}" style="width:50px;"></td>
+                            <td><b>{{item.quantity}}</b> x {{item.price | currency}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <button type="button" class="btn-lg nav-button navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                </button>
+
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul id="main-menu" class="sm sm-simple">
+                <!--
+                <li><a href="#!/products/hat">WOMEN</a></li>
+                <li><a href="#!/" >MEN</a></li>
+                <li><a href="#">junior</a></li>
+                <li><a href="#">accessories</a></li>
+                -->
+                <li><a href="#!/products">Products</a>
+                    <ul>
+                        <li>
+                            <a href="#!/products/hat">Hats</a>
+                        </li>
+                        <li>
+                            <a href="#!/products/scarf">Scarfs</a>
+                        </li>
+                        <li>
+                            <a href="#!/products/bag" >Bags</a>
+                        </li>
+                    </ul>
+                </li>
+                <!--
+                <li><a href="#">collections</a>
+                    <ul>
+                        <li>
+                            <a href="#" >2014</a>
+                        </li>
+                        <li>
+                            <a href="#" >2013</a>
+                        </li>
+                        <li>
+                            <a href="#" >2012</a>
+                        </li>
+                        <li>
+                            <a href="#" >2011</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">sale</a></li> -->
+                <li class="linkMyAccount"><a href="#">MY ACCOUNT</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

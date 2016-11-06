@@ -1,0 +1,259 @@
+.cbalink{
+    display:none;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-info{
+    background-color: #C88E44;
+    border-color: #BB792F!important;
+    &:hover{
+        background-color: #DEBD87;
+        border-color: #BB792F!important;
+    }
+    &:active, &:focus{
+        border-color: #BB792F!important;
+        background-color: #C88E44!important;
+    }
+}
+
+
+
+.wrapper{
+    min-height: 100%;
+    margin-bottom: -200px;
+    @media all and (max-device-width : 767px) {
+        margin-bottom: -400px;
+    }
+}
+
+* html .wrapper{
+    height: 100%;
+}
+
+.push{
+    height: 200px;
+    @media all and (max-device-width : 767px) {
+        height:400px;
+    }
+}
+
+footer{
+    height: 200px;
+    @media all and (max-device-width : 767px) {
+        height:400px;
+    }
+}
+
+
+.view-frame{
+    min-height:287px;
+}
+
+.top-line{
+    height:20px;
+    background-color: #C88E44;
+}
+
+
+.header{
+    margin: 10px;
+    vertical-align: middle;
+    padding:5px;
+    position: relative;
+
+    div{
+        padding:10px 0px;
+    }
+
+    .cart-info{
+        position:absolute;
+        top: 70px;
+        right:10px;
+        width: 250px;
+        text-align: left;
+        padding: 10px;
+
+        visibility: hidden;
+        background-color: white;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+        -webkit-transition: visibility 0s, opacity 0.5s linear;
+        -moz-transition: visibility 0s, opacity 0.5s linear;
+        -o-transition: visibility 0s, opacity 0.5s linear;
+
+        z-index: 99999;
+
+        td{
+            padding:5px;
+        }
+    }
+}
+
+.cart:hover + .cart-info{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.nav-button{
+    background: white;
+    margin:5px !important;
+    padding: 10px 16px !important;
+    border:1px solid #C9C0B5;
+    border-radius: 5px !important;
+}
+@media all and (max-device-width : 767px) {
+    .nav-button{
+        background: #EBE6E1 !important;
+        border:0px;
+    }
+}
+
+#navigation{
+    padding: 0px;
+
+}
+
+
+
+@media all and (min-device-width : 767px){
+    .linkMyAccount{
+        float: right!important;
+    }
+}
+
+.topinfo{
+    padding: 10px 0px !important;
+
+    .col-sm-6{
+        margin: 10px 0px;
+    }
+    img{
+        margin:auto;
+    }
+
+}
+
+.hellotext{
+
+    font-weight: bold;
+
+    p{
+        margin: 0px;
+    }
+
+    h1{
+        font-weight: bold;
+        margin: 0px;
+    }
+
+    h4{
+        font-weight: bold;
+        margin: 5px 0px;
+    }
+}
+
+.favtitle {
+
+    div{
+        padding: 0px;
+    }
+
+    h4{
+        margin: 0px;
+    }
+}
+
+
+.fancy{
+    overflow: hidden;
+    text-align: left;
+    padding-left:30px;
+
+    span{
+        position: relative;
+    }
+
+    span:before,
+    span:after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+        width: 200em;
+    }
+
+    span:before {
+        right: 100%;
+        margin-right: 10px;
+    }
+
+    span:after {
+        left: 100%;
+        margin-left: 10px;
+    }
+}
+
+.products{
+    text-align: center;
+
+    img{
+        border: 1px solid black;
+        display: inline-block;
+    }
+    .row div{
+        padding:15px;
+    }
+    h5{
+        font-weight: bold;
+    }
+}
+
+.container-fluid.footer{
+    background-color: #C9C0B5;
+    padding:10px 0 0 0;
+    height:200px;
+    @media (max-device-width : 767px) {
+        height:400px!important;
+    }
+    .container{
+        color:white;
+        padding:10px 10px 0px 10px;
+    }
+
+    .glyphicon{
+        color: black;
+        left:0;
+    }
+    h4{
+        font-weight: bold;
+    }
+    .navbar-form{
+        padding: 0px;
+        @media all and (max-device-width : 767px){
+            padding: 0px 10px;
+        }
+    }
+    .form-control{
+        padding-left: 30px;
+        padding-right: 0px!important;
+        width:100% !important;
+        @media all and (max-device-width : 767px){
+            width:100% !important;
+        }
+    }
+    .btn{
+        @media all and (max-device-width : 767px){
+            width:100%;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+}
+

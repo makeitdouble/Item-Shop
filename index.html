@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Item Shop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!--http://codepen.io/anon/pen/WGqvNj  favorites strip-->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet/less" href="./css/style.less">
+    <link rel="stylesheet" href="./node_modules/smartmenus/dist/css/sm-core-css.css">
+    <link rel="stylesheet" href="./css/navstyle.css">
+
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/smartmenus/dist/jquery.smartmenus.js"></script>
+    <script src="./node_modules/less/dist/less.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-resource/angular-resource.js"></script>
+    <script src="./node_modules/angular-route/angular-route.js"></script>
+    <script src="./shop.module.js"></script>
+    <script src="./shop.config.js"></script>
+    <script src="./js/services.js"></script>
+    <script src="./js/index-info/index-info.module.js"></script>
+    <script src="./js/index-info/index-info.component.js"></script>
+    <script src="./js/header-nav/header-nav.module.js"></script>
+    <script src="./js/header-nav/header-nav.component.js"></script>
+    <script src="./js/footer/footer.module.js"></script>
+    <script src="./js/footer/footer.component.js"></script>
+    <script src="./js/products/products.module.js"></script>
+    <script src="./js/products/products.component.js"></script>
+
+
+</head>
+<body ng-app="shopApp">
+
+<div class="wrapper">
+    <div class="container-fluid top-line"></div>
+    <div class="cart-popup"></div>
+    <header></header>
+    <div ng-view class="view-frame"></div>
+    <div class="push"></div>
+</div>
+
+<footer></footer>
+
+</body>
+
+</html>
