@@ -20,3 +20,10 @@ if (isset($_GET["add"])) {
         mysql_query("UPDATE `cart` SET `quantity` = `quantity` + 1 WHERE itemId=$id", $myConnect);
     }
 }
+if (isset($_GET["del"])) {
+    $id = $_GET['id'];
+    mysql_query("DELETE FROM `cart` WHERE itemId = $id", $myConnect);
+}
+if (isset($_GET["clear"])) {
+    mysql_query("DELETE FROM `cart`", $myConnect);
+}

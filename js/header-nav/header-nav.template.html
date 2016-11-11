@@ -1,38 +1,63 @@
 <script>
-    $(function() {
-        $('#main-menu').smartmenus({
-            mainMenuSubOffsetX: -1,
-            subMenusSubOffsetX: 10,
-            subMenusSubOffsetY: 0,
-            subIndicators: false
-        });
-    });
+    $( document ).ready(
+        function() {
+            $(function() {
+                $('#main-menu').smartmenus({
+                    mainMenuSubOffsetX: -1,
+                    subMenusSubOffsetX: 10,
+                    subMenusSubOffsetY: 0,
+                    subIndicators: false
+                });
+            });
+
+
+
+            function tog(){
+                $('div.cart-info').fadeToggle( 'fast');
+            }
+
+            $('div.cart-field').hover(function(){
+                $('div.cart-info').fadeIn('fast');
+                setTimeout(function(){$('div.cart-field').on('click', tog)}, 0);
+            },function(){
+                $(this).off('click', tog);
+                $('div.cart-info').fadeOut('fast');
+            });
+        }
+    );
+
 
 </script>
 <div class="container">
     <div class="row">
         <div class="row header">
             <div class="col-xs-7">
-                <a href="#"><img src="./logo.jpg" class="img-responsive" alt=""></a>
+                <a href="/#!/"><img src="./logo.jpg" class="img-responsive" alt=""></a>
             </div>
             <div class="col-xs-5 text-right cart-nav">
-                <button class="cart nav-button btn-lg">
-                    <span class="glyphicon glyphicon-shopping-cart"></span>
-                    <span class="hidden-xs"> <b>{{$ctrl.qCart}}</b> {{$ctrl.word}} in your cart $<b>{{$ctrl.totalPrice}}</b></span>
-                </button>
-                <div class="cart-info nav-button btn-lg">
-                    <table>
-                        <tr ng-repeat="item in $ctrl.localItems">
-                            <td><img ng-src="{{item.imageUrl}}" style="width:50px;"></td>
-                            <td><b>{{item.quantity}}</b> x {{item.price | currency}}</td>
-                        </tr>
-                    </table>
-
+                <div class="btn-group">
+                    <div class="cart-field">
+                        <button class="cart nav-button btn-lg">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                            <span class="hidden-xs"> <b>{{$ctrl.qCart}}</b> {{$ctrl.word}} in your cart $<b>{{$ctrl.totalPrice}}</b></span>
+                        </button>
+                        <div class="cart-info">
+                            {{emptyCartMessage}}
+                            <table>
+                                <tr ng-repeat="item in $ctrl.localItems">
+                                    <td><img ng-src="{{item.imageUrl}}" style="width:50px;"></td>
+                                    <td><b>{{item.quantity}}</b> x {{item.price | currency}}</td>
+                                    <td><div class="delete-item glyphicon glyphicon-remove" ng-click="deleteFromCart(item.id)"></div></td>
+                                </tr>
+                            </table>
+                            <a class="btn btn-sm btn-success pull-left" ng-hide="emptyCartMessage" disabled>Checkout</a>
+                            <a class="btn btn-sm btn-danger pull-right clear-cart" ng-click="clearCart()" ng-hide="emptyCartMessage">Clear</a>
+                        </div>
+                    </div>
+                        <button class="btn-lg nav-button navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        </button>
                 </div>
-                <button type="button" class="btn-lg nav-button navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                    <span class="glyphicon glyphicon-menu-hamburger"></span>
-                </button>
-
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navigation">

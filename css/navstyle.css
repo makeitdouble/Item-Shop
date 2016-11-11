@@ -1,6 +1,6 @@
 .sm-simple {
   border-bottom:8px solid black;
-  padding: 0px;
+  padding: 0;
   background: white;
 }
 .sm-simple a, .sm-simple a:hover, .sm-simple a:focus, .sm-simple a:active {
@@ -271,9 +271,7 @@
 }
 
 @media (max-width: 768px) {
-  .sm-simple {
-    border-bottom: 2px solid #CEE5F5;
-  }
+
   .sm-simple a:hover, .sm-simple a:focus, .sm-simple a:active, a.has-submenu{
     background-color: #FAFCFC!important;
   }

@@ -2,7 +2,7 @@
 var shopApp = angular.module('shopApp');
 
 
-shopApp.factory('item', ['$resource', function($resource){
+shopApp.factory('items', ['$resource', function($resource){
     return $resource('item.php?:option', {}, {
         get: {
             method: 'GET',
@@ -24,6 +24,16 @@ shopApp.factory('cart', ['$resource', function($resource){
             method: 'GET',
             params: {option: "get"},
             isArray: true
+        },
+        delItem:{
+            method: 'GET',
+            params: {option: "del"},
+            isArray: false
+        },
+        clear:{
+            method: 'GET',
+            params: {option: "clear"},
+            isArray: false
         }
     });
 }]);
@@ -91,6 +101,17 @@ shopApp.factory('localCart', ['$window', function($window){
                 $window.sessionStorage.clear();
                 $window.localStorage.clear();
                 console.log('____________all clear___________');
+            },
+
+            deleteItem : function(id){
+                for (var item in $window.sessionStorage)
+                {
+                   var temp = JSON.parse($window.sessionStorage[item]);
+                   if( temp.id == id ){
+                       $window.sessionStorage.removeItem(item);
+                   }
+                }
+                return temp;
             }
         }
 }]);

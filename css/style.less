@@ -61,15 +61,17 @@ footer{
 
 
 .header{
-    margin: 10px;
+    margin: 10px 0px;
     vertical-align: middle;
-    padding:5px;
     position: relative;
 
     div{
         padding:10px 0px;
     }
 
+    .cart-field{
+        display: inline-block;
+    }
     .cart-info{
         position:absolute;
         top: 70px;
@@ -77,39 +79,37 @@ footer{
         width: 250px;
         text-align: left;
         padding: 10px;
-
-        visibility: hidden;
+        margin-top: 10px;
         background-color: white;
-        opacity: 0;
-        transition: visibility 0s, opacity 0.5s linear;
-        -webkit-transition: visibility 0s, opacity 0.5s linear;
-        -moz-transition: visibility 0s, opacity 0.5s linear;
-        -o-transition: visibility 0s, opacity 0.5s linear;
-
+        border:1px solid #C9C0B5;
+        border-radius: 5px;
+        font-size: 18px;
         z-index: 99999;
-
+        display: none;
+        table{
+            width:100%;
+        }
+        .delete-item{
+            cursor: pointer;
+            color:red;
+        }
         td{
             padding:5px;
         }
     }
 }
 
-.cart:hover + .cart-info{
-    visibility: visible;
-    opacity: 1;
-}
-
-
 .nav-button{
     background: white;
-    margin:5px !important;
-    padding: 10px 16px !important;
+    margin:5px;
+    padding: 10px 16px;
     border:1px solid #C9C0B5;
-    border-radius: 5px !important;
+    border-radius: 5px;
+    float: none;
 }
 @media all and (max-device-width : 767px) {
     .nav-button{
-        background: #EBE6E1 !important;
+        background: #EBE6E1;
         border:0px;
     }
 }
@@ -118,17 +118,19 @@ footer{
     padding: 0px;
 
 }
-
-
-
-@media all and (min-device-width : 767px){
+@media all and (max-device-width : 768px){
     .linkMyAccount{
-        float: right!important;
+        float: left;
+    }
+}
+@media all and (min-device-width : 768px){
+    .linkMyAccount{
+        float: right !important;
     }
 }
 
 .topinfo{
-    padding: 10px 0px !important;
+    padding: 10px 0px;
 
     .col-sm-6{
         margin: 10px 0px;
