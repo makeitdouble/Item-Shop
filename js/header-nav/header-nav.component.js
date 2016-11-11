@@ -9,13 +9,13 @@ angular.module('header-nav').component('header', {
         self.word = "items";
 
         $rootScope.$on('addToCart', function(){
+            collectData();
             if (self.qCart == 1)
             {
                 self.word = "item";
             }else{
                 self.word = "items";
             }
-            collectData();
         });
 
         if (localCart.length() == 0)
@@ -32,7 +32,7 @@ angular.module('header-nav').component('header', {
 
         $scope.deleteFromCart = function(id){
             localCart.deleteItem(id);
-            cart.delItem({id: id});
+            cart.deleteItem({id: id});
             collectData();
         };
 
@@ -51,7 +51,7 @@ angular.module('header-nav').component('header', {
             }else{
                 $scope.emptyCartMessage = "Nothing here yet.";
             }
-        };
+        }
 
         collectData();
     }]

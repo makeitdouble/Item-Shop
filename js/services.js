@@ -25,7 +25,7 @@ shopApp.factory('cart', ['$resource', function($resource){
             params: {option: "get"},
             isArray: true
         },
-        delItem:{
+        deleteItem:{
             method: 'GET',
             params: {option: "del"},
             isArray: false
@@ -43,20 +43,19 @@ shopApp.factory('localCart', ['$window', function($window){
 
         return {
             set: function(key, item) {
-
+                var str;
                 if (!$window.sessionStorage[key])
                 {
                     item.quantity = item.quantity || 1;
-                    var str = JSON.stringify(item);
-                    $window.sessionStorage[key] = str;
+                    str = JSON.stringify(item);
                 }else{
                     var obj = JSON.parse($window.sessionStorage[key]);
-                    var q = +obj.quantity
+                    var q = +obj.quantity;
                     obj.quantity = q + 1;
-                    var str = JSON.stringify(obj);
-                    $window.sessionStorage[key] = str;
+                    str = JSON.stringify(obj);
                 }
-                
+                $window.sessionStorage[key] = str;
+                return item;
             },
             
             get: function(id) {
@@ -81,8 +80,7 @@ shopApp.factory('localCart', ['$window', function($window){
                 for (var item in $window.sessionStorage)
                 {
                     var i = JSON.parse($window.sessionStorage[item]);
-                    var q = +i.quantity;
-                    quantity += q;
+                    quantity += +i.quantity;
                 }
                 return quantity;
             },
