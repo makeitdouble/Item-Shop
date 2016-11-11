@@ -4,7 +4,7 @@ include 'dbconnect.php';
 
 if (isset($_GET["get"])) {
     $arr = array();
-    $qwer = mysql_query("SELECT items.id, name, price, imageUrl, cart.quantity FROM `items`, `cart` WHERE items.id = cart.itemId", $myConnect);
+    $qwer = mysql_query("SELECT items.id, price, imageUrl, cart.quantity FROM `items`, `cart` WHERE items.id = cart.itemId", $myConnect);
     while ($row = mysql_fetch_assoc($qwer)) {
         $arr[] = $row;
     }

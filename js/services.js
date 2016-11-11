@@ -44,10 +44,12 @@ shopApp.factory('localCart', ['$window', function($window){
         return {
             set: function(key, item) {
                 var str;
+                var localItem;
                 if (!$window.sessionStorage[key])
                 {
-                    item.quantity = item.quantity || 1;
-                    str = JSON.stringify(item);
+                    localItem = item;
+                    localItem.quantity = item.quantity || 1;
+                    str = JSON.stringify(localItem);
                 }else{
                     var obj = JSON.parse($window.sessionStorage[key]);
                     var q = +obj.quantity;
