@@ -1,3 +1,3 @@
 # Item Shop
 
-<a href="http://makeitdouble.zzz.com.ua/shop/">demo</a>
+<a href="http://test.makeitdouble.zzz.com.ua/">demo</a>
