@@ -4,10 +4,15 @@ var shopApp = angular.module('shopApp');
 
 shopApp.factory('items', ['$resource', function($resource){
     return $resource('item.php?:option', {}, {
-        get: {
+        getItems: {
             method: 'GET',
             params:{option: "get"},
             isArray: true
+        },
+        getItem: {
+            method: 'GET',
+            params:{option: "get"},
+            isArray: false
         }
     });
 }]);

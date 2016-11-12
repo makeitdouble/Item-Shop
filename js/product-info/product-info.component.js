@@ -1,9 +1,9 @@
 'use strict';
 
-var products = angular.module('products');
+var products = angular.module('product-info');
 
-products.component('productsList', {
-    templateUrl: './js/products/products.template.html',
+products.component('productInfo', {
+    templateUrl: './js/product-info/product-info.template.html',
 
     controller: ['items', 'cart', 'localCart', '$routeParams', '$scope', '$rootScope', function(items, cart, localCart, $routeParams, $scope, $rootScope){
 
@@ -13,8 +13,7 @@ products.component('productsList', {
             $rootScope.$emit('addToCart', item);
         };
         
-        $scope.filter = $routeParams.filter;
-        $scope.items = items.getItems();
-        
+        $scope.item = items.getItem({id: $routeParams.id});
+
         }]
 });

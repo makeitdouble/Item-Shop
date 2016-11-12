@@ -7,6 +7,9 @@ angular.module('shopApp').config(['$locationProvider', '$routeProvider', functio
     when('/products/', {
         template: '<products-list></products-list>'
     }).
+    when('/product/:id', {
+        template: '<product-info></product-info>'
+    }).
     when('/products/:filter', {
         template: '<products-list></products-list>'
     }).

@@ -32,7 +32,7 @@
     <div class="row">
         <div class="row header">
             <div class="col-xs-7">
-                <a href="/#!/"><img src="./logo.jpg" class="img-responsive" alt=""></a>
+                <a href="/#!/"><img src="logo.jpg" class="img-responsive" alt=""></a>
             </div>
             <div class="col-xs-5 text-right cart-nav">
                 <div class="btn-group">
@@ -45,7 +45,7 @@
                             {{emptyCartMessage}}
                             <table>
                                 <tr ng-repeat="item in $ctrl.localItems">
-                                    <td><img ng-src="{{item.imageUrl}}" style="width:50px;"></td>
+                                    <td><img ng-src="img/products/{{item.image}}" style="width:50px;"></td>
                                     <td><b>{{item.quantity}}</b> x {{item.price | currency}}</td>
                                     <td><div class="delete-item glyphicon glyphicon-remove" ng-click="deleteFromCart(item.id)"></div></td>
                                 </tr>
