@@ -17,6 +17,16 @@ shopApp.factory('items', ['$resource', function($resource){
     });
 }]);
 
+shopApp.factory('comments', ['$resource', function($resource){
+    return $resource('comments.php?:option', {}, {
+        getComments: {
+            method: 'GET',
+            params:{option: "get"},
+            isArray: true
+        }
+    });
+}]);
+
 
 shopApp.factory('cart', ['$resource', function($resource){
     return $resource('cart.php?:option', {}, {

@@ -2,6 +2,7 @@
 
 angular.module('shopApp', [
     'products',
+    'comments',
     'index-info',
     'product-info',
     'header-nav',
